@@ -1,0 +1,39 @@
+=== Starting Final Evaluation Script ===
+Loading Data...
+Constructing Strict Disjoint Subsets (Fixing Data Leakage)...
+
+Training LSTM Fast-Path...
+
+=== [Experiment 1] Ablation Study & End-to-End Pipeline ===
+Setup              | Mode               | Acc    | Rec    | Prec   | F1     | EscRate
+-------------------------------------------------------------------------------------
+00-Shot RF        | Always-On Baseline | 0.4990 | 0.0000 | 0.0000 | 0.0000 | 100.0%
+00-Shot Pipeline  | Gated (0.05-0.95)  | 0.4990 | 0.0000 | 0.0000 | 0.0000 | 55.00%
+-------------------------------------------------------------------------------------
+10-Shot RF        | Always-On Baseline | 0.5250 | 0.0520 | 0.9630 | 0.0987 | 100.0%
+10-Shot Pipeline  | Gated (0.05-0.95)  | 0.5220 | 0.0460 | 0.9650 | 0.0878 | 55.00%
+-------------------------------------------------------------------------------------
+50-Shot RF        | Always-On Baseline | 0.7620 | 0.5280 | 0.9925 | 0.6893 | 100.0%
+50-Shot Pipeline  | Gated (0.05-0.95)  | 0.7585 | 0.5180 | 0.9960 | 0.6780 | 55.00%
+-------------------------------------------------------------------------------------
+
+=== [Experiment 2] Latency Comparison Test ===
+Scope: Measurements reflect single-sample Model Inference Only.
+Scope: Excludes I/O, data preprocessing, sequence padding, and JSON serialization overhead.
+
+Measuring RF Latency...
+RF Verifier Latency (Avg): 3.00 ms
+LLM Audit Latency (Avg):   1519.58 ms
+Speedup Factor:            506.5x
+Saved latency chart to: D:\LSTM\new\latency_comparison.png
+
+Done. Check final_test_output.txt and latency_comparison.png
+
+=== [Generating Paper Figures] ===
+Generating Fig 2: LSTM_Only.png...
+Generating Fig 3: gating_tradeoff_fix.png...
+Generating Fig 4: recall_by_subclass_fix.png...
+Generating Fig 5: latency_distribution.png...
+Generating Fig 6: latency_comparison.png...
+
+✅ All 5 figures have been successfully generated and saved to D:\LSTM\new
