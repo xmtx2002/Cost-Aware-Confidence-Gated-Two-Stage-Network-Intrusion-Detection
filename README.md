@@ -44,22 +44,3 @@ The Stage 2 Lightweight Verifier (Random Forest) introduces minimal overhead, wi
 
 ---
 
-## 🛠️ Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/YourUsername/Cost-Aware-NIDS.git](https://github.com/YourUsername/Cost-Aware-NIDS.git)
-   cd Cost-Aware-NIDS
-
-## 📂 Project Structure
-
-```text
-├── data/                   # Place CIC-IDS-2017 CSV files here
-├── results/                # Generated plots, confusion matrices, and logs
-│   ├── zeroday_training_curve.png
-│   ├── Zero-Day_Confusion_Matrix.png
-│   └── 2_Summary_Comparison.png
-├── LSTM.py                 # Stage 1: Train the LSTM baseline (DoS -> Web Attack split)
-├── model.py                # Stage 2: Hybrid Inference (LSTM + Confidence Gating + Ollama)
-├── requirements.txt        # Python dependencies
-└── README.md               # This file
